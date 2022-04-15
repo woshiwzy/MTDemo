@@ -1,0 +1,59 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+
+        //本地依赖的关键代码
+        maven {
+            allowInsecureProtocol = true
+            credentials {
+                username "admin"
+                password "admin123"
+            }
+            url 'http://127.0.0.1:8084/repository/maven-public/'
+        }
+
+        google()
+//        mavenLocal()
+        mavenCentral()
+        maven { url 'https://dl.google.com/dl/android/maven2/' }
+        maven { url 'https://www.jitpack.io' }
+        jcenter()
+        maven { url 'https://jcenter.bintray.com' }
+
+
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:7.0.4"
+        classpath "com.sand.group:mt:1.0.1" //来自自定义仓库
+    }
+}
+
+allprojects{
+
+    repositories{
+        //本地依赖的关键代码
+        maven {
+            allowInsecureProtocol = true
+            credentials {
+                username "admin"
+                password "admin123"
+            }
+            url 'http://127.0.0.1:8084/repository/maven-public/'
+        }
+
+        jcenter()
+        google()
+//        mavenLocal()
+        mavenCentral()
+        maven { url 'https://dl.google.com/dl/android/maven2/' }
+        maven { url 'https://www.jitpack.io' }
+    }
+
+
+}
+
+
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
