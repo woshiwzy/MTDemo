@@ -69,7 +69,7 @@ public class CreateCallBackTask extends DefaultTask {
                     "   StackTraceElement[] sts = Thread.currentThread().getStackTrace();\n\n"+
                     "   //sts[3] 就是mtDone被调用所在的方法，也可以循环向上查询更深的栈层级\n\n"+
                     "   String currentMethodName = sts[3].getClassName() + \".\" + sts[3].getMethodName();\n\n"+
-                    "   String mtLog = currentMethodName + \" 耗时:\" + cost+ \"线程名:\"+Thread.currentThread().getName();\n\n"+
+                    "   String mtLog = currentMethodName + \" 耗时:\" + cost+ \" ms,Thread.name:\"+Thread.currentThread().getName();\n\n"+
                     "   System.out.println(mtLog);\n\n"+
                     "   Log.d(\"mt\", mtLog);\n\n"+
                     "   }" +

@@ -11,13 +11,16 @@ dependencies {
     implementation files('libs/asm-util-9.2.jar')
     implementation files('libs/commons-io-2.6.jar')  //使用com.android.build.api
 }
+
+
+
 //
 gradlePlugin {
     plugins {
         //定义的信息不一定和发布信息相同
         MethodTracer {
             id = 'com.sand.mt'                                //定义插件id
-            version ='1.0.1'
+            version ='1.0.2'
             implementationClass = 'com.sand.mt.src.plug.MTPlug'  //定义插件实现类
         }
     }
@@ -55,7 +58,7 @@ publishing {
 //            from components.java
             groupId = "com.sand.group"
             artifactId = "mt"
-            version = "1.0.1"
+            version = "1.0.2"
             description "MTPlug is a good apm tool"
             from components.java
 //            afterEvaluate {
@@ -67,7 +70,7 @@ publishing {
     repositories {
         maven {
             allowInsecureProtocol true
-            url = 'http://127.0.0.1:8084/repository/maven-releases/'
+            url = 'http://161.117.195.45:6677/repository/maven-releases/'
             credentials {
                 it.username = "admin"
                 it.password = "admin123"
